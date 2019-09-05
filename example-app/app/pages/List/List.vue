@@ -1,20 +1,19 @@
 <template>
     <Page>
-        <Navigator defaultRoute="/home" />
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <StackLayout>
-            <Label class="message" :text="msg"/>
-            <Button text="list" @tap="$navigator.navigate('list')"/>
-            <Button text="form" @tap="$navigator.navigate('form')"/>
+        <ActionBar title="list"/>
+        <StackLayout columns="*" rows="*">
+            <Label class="message" :text="msg" col="0" row="0"/>
+            <Button text="back" @tap="$navigator.back()"/>
         </StackLayout>
     </Page>
 </template>
 
 <script lang="ts">
   export default {
+    name: 'list',
     data() {
       return {
-        msg: 'Hello World!'
+        msg: 'My list'
       }
     }
   }
